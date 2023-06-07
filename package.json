@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "host": "vite --host"
   },
   "devDependencies": {
     "@smui-extra/bottom-app-bar": "^7.0.0-beta.8",
