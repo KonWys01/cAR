@@ -5,7 +5,26 @@
         <h2>{value}</h2>
     </div>
     <div class="info">
-
+        <div class="card-display">
+            <div class="card-container">
+                <Card>
+                    <PrimaryAction on:click={() => clicked++}>
+                        <Content class="mdc-typography--body2">
+                            <h5 class="mdc-typography--headline6" style="margin: 0; font-weight: 400">
+                                {advice}
+                            </h5>
+                            {#if selected !== "Termin przeglądu" }
+                                <hr>
+                            {/if}
+                            <h5 class="mdc-typography--headline6" style="margin: 0; font-weight: 400">
+                                {prefered}
+                            </h5>
+                            <h2 class="mdc-typography--headline6" style="margin: 0; font-weight: 600">{plyn}</h2>
+                        </Content>
+                    </PrimaryAction>
+                </Card>
+            </div>
+        </div>
     </div>
     <div class="bottom-buttons">
         <Section>
@@ -27,26 +46,47 @@
 <script>
     import IconButton from "@smui/icon-button";
     import {Section} from "@smui-extra/bottom-app-bar";
+    import Card, {
+        Content,
+        PrimaryAction,
+    } from '@smui/card';
+
+    let clicked = 0;
 
     let selected = "Płyn hamulcowy";
     let value = "200km";
+    let advice = "Powyższa wartość przedstawia dystans jaki można pokonać bez wymiany płynu hamulcowego";
+    let prefered = "Preferowany typ płynu hamulcowego dla twojego modelu samochodu to:";
+    let plyn = "K2 Dot 4";
 
     function handleClickHamulec() {
         selected = "Płyn hamulcowy";
         value = "200km";
+        advice = "Powyższa wartość przedstawia dystans jaki można pokonać bez wymiany płynu hamulcowego"
+        prefered = "Preferowany typ płynu hamulcowego dla twojego modelu samochodu to:"
+        plyn = "borygo START";
     }
     function handleClickChlodnica() {
         selected = "Płyn chłodniczy";
         value = "300km";
+        advice = "Powyższa wartość przedstawia dystans jaki można pokonać bez wymiany płynu chłodniczego"
+        prefered = "Preferowany typ płynu chłodniczego dla twojego modelu samochodu to:"
+        plyn = "K2 Dot 4";
     }
     function handleClickOlejSilnikowy() {
         selected = "Olej silnikowy";
         value = "800km";
+        advice = "Powyższa wartość przedstawia dystans jaki można pokonać bez wymiany oleju silnikowego"
+        prefered = "Preferowany typ oleju silnikowego dla twojego modelu samochodu to:"
+        plyn = "Castrol EDGE";
     }
 
     function handleClickKalendarz() {
         selected = "Termin przeglądu";
-        value= "330dni"
+        value= "330dni";
+        advice = "Powyższa wartość przedstawia pozostały czas do następnego przeglądu"
+        prefered = ""
+        plyn = "";
     }
 
 </script>
@@ -60,12 +100,14 @@
         font-weight: bold;
         color: #fff;
         font-size: 32px;
+        margin: 0;
     }
 
     h2 {
         font-weight: bold;
         color: #fff;
         font-size: 20px;
+        margin-top: 10px
     }
 
     .bottom-buttons {
@@ -78,11 +120,16 @@
 
     .stat {
         margin-top: 20px;
-        height: 450px;
     }
 
     .licznik {
         width: 290px;
         height: 235px;
+    }
+
+    .card-display {
+        width: 80%;
+        height: 140px;
+        margin-left: 10%;
     }
 </style>
