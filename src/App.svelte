@@ -1,13 +1,21 @@
 <div class="flexy">
     <div class="bottom-app-bar-container flexor">
         <div class="flexor-content">
-            <h5>Right FAB</h5>
-
-            <img
-                    alt="Page content placeholder"
-                    src="/page-content.jpg"
-                    style="display: block; max-width: 100%; height: auto; margin: 1em auto;"
-            />
+            {#if avaiable === "settings" }
+                <Settings/>
+            {/if}
+            {#if avaiable === "profile" }
+                <Profile/>
+            {/if}
+            {#if avaiable === "Ar" }
+                <Ar/>
+            {/if}
+            {#if avaiable === "carRepair" }
+                <CarRepair/>
+            {/if}
+            {#if avaiable === "statistics" }
+                <Statistics/>
+            {/if}
         </div>
 
         <BottomAppBar
@@ -15,23 +23,23 @@
                 color={secondaryColor ? 'secondary' : 'primary'}
         >
             <Section>
-                <IconButton class="material-icons" aria-label="Search">
+                <IconButton class="material-icons" aria-label="Search" on:click={handleClickSettings}>
                     settings
                 </IconButton
                 >
-                <IconButton class="material-icons" aria-label="Search"
+                <IconButton class="material-icons" aria-label="Search" on:click={handleClickProfile}
                 >person
                 </IconButton
                 >
-                <IconButton class="material-icons" aria-label="Search"
+                <IconButton class="material-icons" aria-label="Search" on:click={handleClickAr}
                 >center_focus_weak
                 </IconButton
                 >
-                <IconButton class="material-icons" aria-label="Search"
+                <IconButton class="material-icons" aria-label="Search" on:click={handleClickCarRepair}
                 >car_repair
                 </IconButton
                 >
-                <IconButton class="material-icons" aria-label="More"
+                <IconButton class="material-icons" aria-label="More" on:click={handleClickStatistics}
                 >trending_up
                 </IconButton>
             </Section>
@@ -44,8 +52,31 @@
 <script lang="ts">
     import BottomAppBar, {Section} from '@smui-extra/bottom-app-bar';
     import IconButton from '@smui/icon-button';
+    import Statistics from "./components/Statistics.svelte";
+    import Settings from "./components/Settings.svelte";
+    import Profile from "./components/Profile.svelte";
+    import Ar from "./components/Ar.svelte";
+    import CarRepair from "./components/CarRepair.svelte";
 
     let secondaryColor = false;
+    let avaiable = "statistics";
+
+    function handleClickSettings() {
+        avaiable = "settings";
+    }
+    function handleClickProfile() {
+        avaiable = "profile";
+    }
+    function handleClickAr() {
+        avaiable = "Ar";
+    }
+    function handleClickCarRepair() {
+        avaiable = "carRepair";
+    }
+    function handleClickStatistics() {
+        avaiable = "statistics";
+    }
+
 </script>
 
 <style>
