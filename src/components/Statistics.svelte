@@ -28,16 +28,16 @@
     </div>
     <div class="bottom-buttons">
         <Section>
-            <IconButton class="material-icons" aria-label="Search" style="width: 60px; height: 60px" on:click={handleClickHamulec}>
+            <IconButton class="material-icons" aria-label="Search" style="width: 55px; height: 55px" on:click={handleClickHamulec}>
                 <img src="../../public/hamulcowy.png" style="width: 100%; height: 100%" alt="hamulcowy">
             </IconButton>
-            <IconButton class="material-icons" aria-label="Search" style="width: 60px; height: 60px" on:click={handleClickChlodnica}>
+            <IconButton class="material-icons" aria-label="Search" style="width: 55px; height: 55px" on:click={handleClickChlodnica}>
                 <img src="../../public/chlodnica.png" style="width: 100%; height: 100%" alt="chlodnica">
             </IconButton>
-            <IconButton class="material-icons silnikowy" style="width: 60px; height: 60px" on:click={handleClickOlejSilnikowy}>
+            <IconButton class="material-icons silnikowy" style="width: 55px; height: 55px" on:click={handleClickOlejSilnikowy}>
                 <img src="../../public/olej_silnikowy2.png" style="width: 100%; height: 100%" alt="olej_silnikowy" >
             </IconButton>
-            <IconButton class="material-icons" aria-label="Search" style="width: 60px; height: 60px" on:click={handleClickKalendarz}>
+            <IconButton class="material-icons" aria-label="Search" style="width: 55px; height: 55px" on:click={handleClickKalendarz}>
                 <img src="../../public/kalendarz.png" style="width: 100%; height: 100%" alt="kalendarz">
             </IconButton>
         </Section>
@@ -112,7 +112,7 @@
 
     .bottom-buttons {
         width: 80%;
-        height: 108px;
+        height: 103px;
         border: 1px solid;
         margin-left: 10%;
         margin-top: 20%;
